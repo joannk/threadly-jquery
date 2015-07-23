@@ -1,11 +1,17 @@
 var main = function() {
   $('form').submit(function() {
-    
-    if(comment !== "") {
-      var html = $('<li>').text(comment);
-      
-    }
 
+var comment = $("#comment").val();
+var new_text = comment;
+
+
+  if(comment !== "") {
+    var html = $('<li>').text(comment);
+
+    $('<li>').text(comment).prependTo('.comments');
+
+    $('#comment').val("");
+  }
     return false;
   });
 };
